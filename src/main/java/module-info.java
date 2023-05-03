@@ -3,6 +3,6 @@ module com.example.playgroundfx {
     requires javafx.fxml;
 
 
-    opens com.example.playgroundfx to javafx.fxml;
-    exports com.example.playgroundfx;
+    opens com.example.trgs to javafx.fxml;
+    exports com.example.trgs;
 }

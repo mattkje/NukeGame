@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #92eac2;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.playgroundfx.HelloController">
+<BorderPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #92eac2;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trgs.GameMenuController">
    <top>
       <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #57e1a0;" BorderPane.alignment="CENTER">
         <items>

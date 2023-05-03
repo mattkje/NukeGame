@@ -1,4 +1,4 @@
-package com.example.playgroundfx;
+package com.example.trgs;
 
 public class Question {
 

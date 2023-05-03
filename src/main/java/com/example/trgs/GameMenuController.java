@@ -1,9 +1,9 @@
-package com.example.playgroundfx;
+package com.example.trgs;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class GameMenuController {
     @FXML
     private Label welcomeText;
 
