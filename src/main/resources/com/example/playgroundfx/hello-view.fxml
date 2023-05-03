@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #92eac2;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.playgroundfx.HelloController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #57e1a0;" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@title.png" />
+                     </image>
+                     <effect>
+                        <DropShadow height="0.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.3549783527851105" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+               </graphic></Button>
+           <HBox HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="59.0" text="Exit" />
+        </items>
+         <effect>
+            <DropShadow height="43.97" offsetY="3.0" radius="10.4925" width="0.0">
+               <color>
+                  <Color opacity="0.5670995712280273" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ToolBar>
+   </top>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #57e1a0;" BorderPane.alignment="CENTER">
+         <items>
+            <HBox HBox.hgrow="ALWAYS" />
+            <TextField alignment="CENTER" prefHeight="62.0" prefWidth="514.0" promptText="Guess" style="-fx-background-color: #cfecdb; -fx-background-radius: 50px;">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetY="3.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.4025973975658417" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <HBox HBox.hgrow="ALWAYS" />
+         </items>
+         <effect>
+            <DropShadow height="43.97" offsetY="-3.0" radius="10.4925" width="0.0">
+               <color>
+                  <Color opacity="0.5670995712280273" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ToolBar>
+   </bottom>
+   <right>
+      <VBox prefHeight="945.0" prefWidth="313.0" style="-fx-background-color: rgba(0,0,0,0.57); -fx-spacing: 20; -fx-padding: 20;">
+         <children>
+            <Label prefHeight="44.0" prefWidth="179.0" text="User 1" textFill="WHITE">
+               <font>
+                  <Font name="Inter Semi Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label prefHeight="44.0" prefWidth="179.0" text="User 2" textFill="WHITE">
+               <font>
+                  <Font name="Inter Semi Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label prefHeight="44.0" prefWidth="179.0" text="User 3" textFill="WHITE">
+               <font>
+                  <Font name="Inter Semi Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label prefHeight="44.0" prefWidth="179.0" text="User 4" textFill="WHITE">
+               <font>
+                  <Font name="Inter Semi Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label prefHeight="44.0" prefWidth="179.0" text="User 5" textFill="WHITE">
+               <font>
+                  <Font name="Inter Semi Bold" size="32.0" />
+               </font>
+            </Label>
+         </children></VBox>
+   </right>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox maxHeight="200.0" maxWidth="500.0" style="-fx-background-color: #57e1a0; -fx-padding: 50; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="QUESTION" textFill="WHITE">
+                     <font>
+                        <Font name="Inter Semi Bold" size="47.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="0.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.48917749524116516" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="404.0" fitWidth="504.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@TRGS.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="0.0" offsetY="5.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.40692639350891113" />
+                     </color>
+                  </DropShadow>
+               </effect></VBox>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>
