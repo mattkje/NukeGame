@@ -1,3 +1,6 @@
-# TRGS-game
+# Ge55er: A Guessing Game
 
-Guessing game
+## Introduction
+
+Ge55er is a non-serious attempt at creating an interactive guessing game.
+
