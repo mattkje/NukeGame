@@ -1,4 +1,4 @@
-package com.example.trgs;
+package com.example.trgs.logic;
 
 public class Question {
 
