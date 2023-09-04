@@ -79,7 +79,7 @@
                         <Image url="@TRGS.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="44.0" prefWidth="179.0" text="User 1" textFill="WHITE">
+                  <Label prefHeight="44.0" prefWidth="179.0" text="Jack" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Black Italic" size="30.0" />
                      </font>
@@ -93,7 +93,7 @@
                         <Image url="@TRGS.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="44.0" prefWidth="179.0" text="User 2" textFill="WHITE">
+                  <Label prefHeight="44.0" prefWidth="179.0" text="Matt" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Black Italic" size="30.0" />
                      </font>
@@ -107,7 +107,7 @@
                         <Image url="@TRGS.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="44.0" prefWidth="179.0" text="User 3" textFill="WHITE">
+                  <Label prefHeight="44.0" prefWidth="179.0" text="Paul" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Black Italic" size="30.0" />
                      </font>
@@ -121,7 +121,7 @@
                         <Image url="@TRGS.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="44.0" prefWidth="179.0" text="User 4" textFill="WHITE">
+                  <Label prefHeight="44.0" prefWidth="179.0" text="Julia" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Black Italic" size="30.0" />
                      </font>
@@ -135,7 +135,7 @@
          <center>
             <VBox alignment="CENTER" maxHeight="554.0" maxWidth="689.0" prefHeight="554.0" prefWidth="689.0" style="-fx-background-color: rgba(0,0,0,0.57); -fx-padding: 50; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="QUESTION COULD NOT LOAD" textFill="WHITE">
+                  <Label text="Who is this?" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI Black Italic" size="34.0" />
                      </font>
@@ -149,7 +149,7 @@
                   </Label>
                   <ImageView fitHeight="363.0" fitWidth="382.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@TRGS.png" />
+                        <Image url="@skalla.png" />
                      </image>
                   </ImageView>
                </children>
