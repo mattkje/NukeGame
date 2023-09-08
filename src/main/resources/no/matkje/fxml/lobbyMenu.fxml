@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.ui.MainMenuController">
+   <Label prefHeight="730.0" prefWidth="1825.0" text="GE55ER" textAlignment="CENTER" textFill="#ffffff0c">
+      <font>
+         <Font name="Segoe UI Black Italic" size="500.0" />
+      </font>
+   </Label>
+   <BorderPane prefHeight="1080" prefWidth="1920">
+      <right>
+         <VBox alignment="CENTER" prefHeight="807.0" prefWidth="964.0" BorderPane.alignment="CENTER">
+            <children>
+               <VBox alignment="CENTER" maxHeight="599.0" maxWidth="645.0" prefHeight="599.0" prefWidth="292.0" style="-fx-padding: 50; -fx-background-color: rgba(0,0,0,0.45); -fx-background-radius: 40; -fx-spacing: 20;">
+                  <children>
+                     <Label text="Create game" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Black Italic" size="38.0" />
+                        </font>
+                     </Label>
+                     <TextField prefHeight="62.0" prefWidth="380.0" promptText="GAME CODE">
+                        <font>
+                           <Font name="Segoe UI Semibold Italic" size="18.0" />
+                        </font>
+                     </TextField>
+                     <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="205.0" text="Join" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Black" size="30.0" />
+                        </font>
+                     </Button>
+                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 20;" />
+                     <Button mnemonicParsing="false" prefHeight="77.0" prefWidth="230.0" text="Host Game" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Black Italic" size="30.0" />
+                        </font>
+                     </Button>
+                  </children></VBox>
+            </children></VBox>
+      </right>
+      <center>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="973.0" BorderPane.alignment="CENTER">
+            <children>
+               <VBox alignment="CENTER" maxHeight="599.0" maxWidth="645.0" prefHeight="599.0" prefWidth="645.0" style="-fx-padding: 50; -fx-background-color: rgba(0,0,0,0.45); -fx-background-radius: 40; -fx-spacing: 20;">
+                  <children>
+                     <Label text="Enter game code" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Black Italic" size="38.0" />
+                        </font>
+                     </Label>
+                     <TextField prefHeight="62.0" prefWidth="380.0" promptText="GAME CODE">
+                        <font>
+                           <Font name="Segoe UI Semibold Italic" size="18.0" />
+                        </font>
+                     </TextField>
+                     <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="205.0" text="Join" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Black" size="30.0" />
+                        </font>
+                     </Button>
+                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 20;" />
+                     <Button mnemonicParsing="false" prefHeight="77.0" prefWidth="230.0" text="Host Game" textFill="WHITE">
+                        <font>
+                           <Font name="Segoe UI Black Italic" size="30.0" />
+                        </font>
+                     </Button>
+                  </children></VBox>
+            </children></VBox>
+      </center>
+      <top>
+         <Label alignment="CENTER" prefHeight="111.0" prefWidth="642.0" text="Multiplayer" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
+            <font>
+               <Font name="Segoe UI Black Italic" size="66.0" />
+            </font>
+         </Label>
+      </top>
+   </BorderPane>
+</StackPane>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.ui.GameMenuController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.57);" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: transparent;" />
+           <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="GE55ER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black Italic" size="40.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="0.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.3982684016227722" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <HBox prefHeight="58.0" prefWidth="420.0" />
+               </children></HBox>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: rgba(0,0,0,0.57);" text="Exit" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black Italic" size="25.0" />
+               </font></Button>
+        </items>
+         <effect>
+            <DropShadow height="9.3" radius="1.8250000000000002" spread="0.6" width="0.0">
+               <color>
+                  <Color opacity="0.5670995712280273" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ToolBar>
+   </top>
+   <bottom>
+      <ToolBar prefHeight="108.0" prefWidth="1920.0" style="-fx-background-color: rgba(0,0,0,0.57);" BorderPane.alignment="CENTER">
+         <items>
+            <HBox HBox.hgrow="ALWAYS" />
+            <TextField alignment="CENTER" prefHeight="62.0" prefWidth="835.0" promptText="Type your answer..." style="-fx-background-color: rgba(0,0,0,0.57); -fx-background-radius: 50px; -fx-text-fill: white;">
+               <font>
+                  <Font name="Segoe UI Semibold" size="28.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetY="3.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.4025973975658417" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <HBox HBox.hgrow="ALWAYS" />
+         </items>
+         <effect>
+            <DropShadow height="43.97" offsetY="-3.0" radius="10.4925" width="0.0">
+               <color>
+                  <Color opacity="0.5670995712280273" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ToolBar>
+   </bottom>
+   <right>
+      <VBox prefHeight="904.0" prefWidth="454.0" style="-fx-background-color: rgba(0,0,0,0.57); -fx-spacing: 20; -fx-padding: 20;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="273.0" style="-fx-spacing: 20; -fx-background-color: black; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/noSelect.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="45.0" prefWidth="200.0" text="playerName" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black Italic" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="GUESS" textFill="#797979">
+                     <font>
+                        <Font name="Segoe UI Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="273.0" style="-fx-spacing: 20; -fx-background-color: black; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/noSelect.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="44.0" prefWidth="200.0" text="playerName" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black Italic" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="GUESS" textFill="#797979">
+                     <font>
+                        <Font name="Segoe UI Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="273.0" style="-fx-spacing: 20; -fx-background-color: black; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/noSelect.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="44.0" prefWidth="200.0" text="playerName" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black Italic" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="GUESS" textFill="#797979">
+                     <font>
+                        <Font name="Segoe UI Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="273.0" style="-fx-spacing: 20; -fx-background-color: black; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/noSelect.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="44.0" prefWidth="200.0" text="playerName" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black Italic" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="GUESS" textFill="#797979">
+                     <font>
+                        <Font name="Segoe UI Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children></VBox>
+   </right>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox alignment="CENTER" maxHeight="554.0" maxWidth="689.0" prefHeight="554.0" prefWidth="689.0" style="-fx-background-color: rgba(0,0,0,0.57); -fx-padding: 50; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Question missing" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black Italic" size="34.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="0.0" offsetY="3.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color opacity="0.48917749524116516" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="363.0" fitWidth="382.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/noInv.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="0.0" offsetY="5.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.40692639350891113" />
+                     </color>
+                  </DropShadow>
+               </effect></VBox>
+         </center>
+         <top>
+            <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="1607.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="timerLabel" alignment="CENTER" prefHeight="55.0" prefWidth="288.0" style="-fx-background-color: rgba(0,0,0,0.57); -fx-background-radius: 0 0 20 20;" text="00:00" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black" size="41.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="9.3" radius="1.8250000000000002" spread="0.6" width="0.0" />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>
