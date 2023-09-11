@@ -16,7 +16,7 @@ public class JukeBox {
 
   private MediaPlayer mediaPlayer;
 
-  private static final String MAIN_MENU_MUSIC = "/gruppe/fire/Media/backgroundMusic.mp3";
+  private static final String MAIN_MENU_MUSIC = "/no/matkje/media/backgroundMusic.mp3";
 
   /**
    * This method is responsible for returning the main menu background music.

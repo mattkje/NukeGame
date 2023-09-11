@@ -161,7 +161,7 @@
     -fx-translate-y: 2px;
 }
 
-#startButton {
+#joinButton {
     -fx-background-color: rgba(0, 0, 0, 0.7);
     -fx-background-radius: 30px;
     -fx-cursor: HAND;
@@ -170,7 +170,7 @@
     -fx-pref-height: 140;
 }
 
-#startButton:hover {
+#joinButton:hover {
     -fx-background-color: rgb(24, 24, 24);
     -fx-background-radius: 30px;
     -fx-cursor: HAND;
@@ -178,7 +178,7 @@
     -fx-pref-height: 140;
 }
 
-#startButton:pressed {
+#joinButton:pressed {
     -fx-background-color: rgb(31, 31, 31);
     -fx-background-radius: 30px;
     -fx-cursor: HAND;
@@ -189,7 +189,7 @@
 
 }
 
-#fileEditorButton {
+#addQuestionButton {
     -fx-background-color: rgba(0, 0, 0, 0.7);
     -fx-background-radius: 20px;
     -fx-cursor: HAND;
@@ -198,7 +198,7 @@
     -fx-pref-height: 70;
 }
 
-#fileEditorButton:hover {
+#addQuestionButton:hover {
     -fx-background-color: rgba(46, 8, 82, 0.7);
     -fx-background-radius: 20px;
     -fx-cursor: HAND;
@@ -206,7 +206,7 @@
     -fx-pref-height: 70;
 }
 
-#fileEditorButton:pressed {
+#addQuestionButton:pressed {
     -fx-background-color: rgba(25, 4, 45, 0.7);
     -fx-background-radius: 20px;
     -fx-cursor: HAND;
@@ -245,7 +245,7 @@
 
 }
 
-#howToPlayButton {
+#hostButton {
     -fx-background-color: rgba(0, 0, 0, 0.7);
     -fx-background-radius: 20px;
     -fx-cursor: HAND;
@@ -254,7 +254,7 @@
     -fx-pref-height: 70;
 }
 
-#howToPlayButton:hover {
+#hostButton:hover {
     -fx-background-color: rgba(46, 8, 82, 0.7);
     -fx-background-radius: 20px;
     -fx-cursor: HAND;
@@ -262,7 +262,7 @@
     -fx-pref-height: 70;
 }
 
-#howToPlayButton:pressed {
+#hostButton:pressed {
     -fx-background-color: rgba(25, 4, 45, 0.7);
     -fx-background-radius: 20px;
     -fx-cursor: HAND;

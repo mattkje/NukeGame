@@ -421,11 +421,11 @@ public class MainMenu {
     Button story = new Button("Join Game");
     story.setFont(menuFontLarge);
     story.setTextFill(Color.WHITE);
-    story.setId("startButton");
+    story.setId("joinButton");
     Button fileEditor = new Button("Add question");
     fileEditor.setFont(font);
     fileEditor.setTextFill(Color.WHITE);
-    fileEditor.setId("fileEditorButton");
+    fileEditor.setId("addQuestionButton");
     Button settings = new Button("Settings");
     settings.setFont(font);
     settings.setTextFill(Color.WHITE);
@@ -433,7 +433,7 @@ public class MainMenu {
     Button howToPlay = new Button("Host Game");
     howToPlay.setFont(font);
     howToPlay.setTextFill(Color.WHITE);
-    howToPlay.setId("howToPlayButton");
+    howToPlay.setId("hostButton");
     Button exit = new Button("Exit Game");
     exit.setFont(font);
     exit.setTextFill(Color.WHITE);
