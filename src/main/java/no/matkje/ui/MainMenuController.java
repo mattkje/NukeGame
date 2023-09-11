@@ -166,9 +166,6 @@ public class MainMenuController {
     citySkyline5.setLayoutY(200);
     citySkyline6.setLayoutY(200);
 
-    citySkyline.setOpacity(0.1);
-    citySkyline2.setOpacity(0.1);
-    citySkyline3.setOpacity(0.1);
     citySkyline4.setEffect(colorAdjust);
     citySkyline5.setEffect(colorAdjust);
     citySkyline6.setEffect(colorAdjust);
@@ -219,7 +216,7 @@ public class MainMenuController {
    * @param menuBox       Main menu buttons VBox.
    * @param player        MediaPlayer playing background music.
    */
-  public void exitButton(BorderPane root, Font font, Font menuFontLarge, Label titleBox, HBox bottom,
+  public void exitButton(BorderPane root, Font font, Font menuFontLarge, HBox titleBox, HBox bottom,
                          HBox menuBox, MediaPlayer player) {
     player.setVolume(player.getVolume() - 0.4);
     Label confirmationLabel = new Label("Are you sure you want to quit?");
@@ -292,6 +289,24 @@ public class MainMenuController {
       citySkyline3.toBack();
       citySkyline2.toBack();
       citySkyline.toBack();
+    }
+  }
+
+  public void fullscreenButton(Stage stage, Label title1, HBox titleBox,
+                               Font titleFontSmall, Font titleFont) {
+    if (stage.isFullScreen()) {
+      stage.setFullScreen(false);
+      stage.setWidth(1380);
+      stage.setHeight(800);
+      title1.setFont(titleFontSmall);
+      titleBox.setSpacing(-26);
+    } else {
+      stage.setFullScreen(true);
+      stage.setFullScreenExitHint("");
+      stage.setFullScreenExitKeyCombination(null);
+      title1.setFont(titleFont);
+      titleBox.setSpacing(-50);
+
     }
   }
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Round {
 
     private final HashMap<Link, Question> questions;
-    private Question openingQuestion;
+    private final Question openingQuestion;
 
     /**
      * Creates an instance of round.

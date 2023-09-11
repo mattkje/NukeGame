@@ -30,6 +30,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -45,7 +46,6 @@ import no.matkje.logic.JukeBox;
  */
 public class MainMenu {
 
-  private static final String DEFAULT_STORY = "defaultStory";
   private static final String PACIFICO = "Segoe UI Black";
 
   private static final String VERSION = "Version: 07.09.23";
@@ -92,7 +92,7 @@ public class MainMenu {
 
 
     //Styling.
-    mainScene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Pacifico");
+    mainScene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Fugaz+One");
     mainScene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Comfortaa");
     mainScene.getStylesheets().add("https://fonts.googleapis.com/css2?family=JetBrains+Mono");
     mainScene.getStylesheets().add(
@@ -124,13 +124,13 @@ public class MainMenu {
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     double width = screenSize.getWidth();
-    Font font = Font.font("Comfortaa", width / 100);
-    Font titleFont = Font.font("Segoe UI Black", width / 9);
-    Font titleFontSmall = Font.font("Segoe UI Black", 100);
+    Font font = Font.font("Fugaz One", width / 100);
+    Font titleFont = Font.font("Fugaz One", FontPosture.ITALIC, width / 9);
+    Font titleFontSmall = Font.font("Fugaz One", FontPosture.ITALIC , 100);
 
 
     //Title (P and aths are separated to make them closer to each other)
-    Label title1 = new Label("GE55ER");
+    Label title1 = new Label("GESSER");
     title1.setTextFill(Color.WHITE);
     title1.setAlignment(Pos.CENTER);
     title1.setEffect(solidShadow);
@@ -210,7 +210,7 @@ public class MainMenu {
     //Dead links warning
 
     //Open paths button.
-    Font menuFontLarge = Font.font(PACIFICO, 64);
+    Font menuFontLarge = Font.font("Fugaz One", 64);
     Button openPathsFile = new Button("Open paths file");
     openPathsFile.setEffect(dropShadow);
     openPathsFile.setFont(font);
@@ -308,6 +308,9 @@ public class MainMenu {
     Button toggleFullscreen = new Button("Toggle fullscreen");
     toggleFullscreen.setFont(font);
     toggleFullscreen.setAlignment(Pos.CENTER);
+    Stage stage = (Stage) mainScene.getWindow();
+    toggleFullscreen.setOnAction(e ->
+            controller.fullscreenButton(stage, title1, titleBox, titleFontSmall, titleFont));
 
     //Change Resolution
     Label smallScreen = new Label("Set resolution");
@@ -415,11 +418,11 @@ public class MainMenu {
     startMenu.setEffect(dropShadow);
     startMenu.setSpacing(30);
 
-    Button story = new Button("Start Game");
+    Button story = new Button("Join Game");
     story.setFont(menuFontLarge);
     story.setTextFill(Color.WHITE);
     story.setId("startButton");
-    Button fileEditor = new Button("File Editor");
+    Button fileEditor = new Button("Add question");
     fileEditor.setFont(font);
     fileEditor.setTextFill(Color.WHITE);
     fileEditor.setId("fileEditorButton");
@@ -427,7 +430,7 @@ public class MainMenu {
     settings.setFont(font);
     settings.setTextFill(Color.WHITE);
     settings.setId("settingsButton");
-    Button howToPlay = new Button("Tutorial");
+    Button howToPlay = new Button("Host Game");
     howToPlay.setFont(font);
     howToPlay.setTextFill(Color.WHITE);
     howToPlay.setId("howToPlayButton");
@@ -456,8 +459,8 @@ public class MainMenu {
       menuBox.getChildren().addAll(backButton, tutorialBox);
     });
     backButton.setOnAction(e -> {
-      if (!root.getChildren().contains(title1)) {
-        root.setTop(title1);
+      if (!root.getChildren().contains(titleBox)) {
+        root.setTop(titleBox);
       }
       menuBox.getChildren().clear();
       menuBox.getChildren().add(startMenu);
@@ -512,7 +515,7 @@ public class MainMenu {
     root.setBottom(bottom);
 
     exit.setOnAction(e ->
-        controller.exitButton(root, font, menuFontLarge, title1, bottom, menuBox, player));
+        controller.exitButton(root, font, menuFontLarge, titleBox, bottom, menuBox, player));
   }
 
 }

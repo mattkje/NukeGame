@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -34,39 +35,33 @@ public class GesserGame extends Application {
     MainMenuController controller = new MainMenuController();
     BorderPane root = new BorderPane();
     root.setPrefSize(1920, 1080);
-    root.setStyle("-fx-background-color: #282652");
-    /*
-     //MediaView mediaView = controller.getLoadingVideo();
-    mediaView.getMediaPlayer().play();
+    root.setStyle("-fx-background-color: linear-gradient(#ff9200, #ffe000)");
 
+    ImageView loading = new ImageView(new Image("/no/matkje/media/loading.png"));
+    root.setCenter(loading);
 
-
-    HBox group = new HBox();
-    mediaView.fitWidthProperty().bind(group.widthProperty());
-    mediaView.fitHeightProperty().bind(group.heightProperty());
-    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-    double screenWidth = screenBounds.getWidth();
-    double screenHeight = screenBounds.getHeight();
-    group.setPrefSize(screenWidth, screenHeight);
-    group.setAlignment(Pos.CENTER);
-    group.getChildren().add(mediaView);
-    root.setCenter(group);
-    MainMenu mainMenu = new MainMenu();
-    mediaView.getMediaPlayer().setOnEndOfMedia(() -> Platform.runLater(() -> {
-      mediaView.getMediaPlayer().dispose();
-      mainMenu.startMain(scene);
-    }));
-     */
 
     Scene scene = new Scene(root, 1920, 1080);
 
-
     MainMenu mainMenu = new MainMenu();
-    mainMenu.startMain(scene);
+
+    //Give program time to load stylesheets
+    Platform.runLater(() -> {
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+      mainMenu.startMain(scene);
+    });
+
+
+
+
     stage.setFullScreen(true);
     stage.setScene(scene);
-    stage.setTitle("Ge55er");
-    //stage.getIcons().add(new Image("/no/matkje/media/icon.png"));
+    stage.setTitle("Gesser");
+    stage.getIcons().add(new Image("/no/matkje/media/icon.png"));
     stage.setFullScreenExitHint("");
     stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
     stage.show();

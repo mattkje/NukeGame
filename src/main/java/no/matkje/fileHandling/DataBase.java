@@ -1,5 +1,8 @@
 package no.matkje.fileHandling;
 
+import no.matkje.logic.Question;
+import no.matkje.logic.Round;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -117,5 +120,12 @@ public class DataBase {
       System.getLogger(exceptionString);
     }
     return tutorial.toString();
+  }
+
+  public Round getQuestions(String category){
+    //Reads all files with the given category, and returns an object of Round.
+
+
+    return null;
   }
 }
