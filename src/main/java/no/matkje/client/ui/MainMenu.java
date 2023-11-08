@@ -1,4 +1,4 @@
-package no.matkje.ui;
+package no.matkje.client.ui;
 
 
 import java.awt.Dimension;
@@ -35,8 +35,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import no.matkje.fileHandling.DataBase;
-import no.matkje.logic.JukeBox;
+import no.matkje.client.fileHandling.DataBase;
+import no.matkje.client.logic.JukeBox;
 
 /**
  * This class represents a starting point for the GUI (Main menu).
