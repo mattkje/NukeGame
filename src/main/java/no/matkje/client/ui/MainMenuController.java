@@ -1,24 +1,19 @@
-package no.matkje.ui;
+package no.matkje.client.ui;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
 import java.util.Objects;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.ParallelTransition;
-import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,11 +24,9 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.text.Font;
-import javafx.stage.FileChooser;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import no.matkje.fileHandling.DataBase;
+import no.matkje.client.fileHandling.DataBase;
 
 /**
  * Represents a controller for the main menu class.
@@ -162,9 +155,9 @@ public class MainMenuController {
     citySkyline5.fitHeightProperty().bind(root.heightProperty());
     citySkyline6.fitHeightProperty().bind(root.heightProperty());
 
-    citySkyline4.setLayoutY(200);
-    citySkyline5.setLayoutY(200);
-    citySkyline6.setLayoutY(200);
+    citySkyline4.setLayoutY(100);
+    citySkyline5.setLayoutY(100);
+    citySkyline6.setLayoutY(100);
 
     citySkyline4.setEffect(colorAdjust);
     citySkyline5.setEffect(colorAdjust);

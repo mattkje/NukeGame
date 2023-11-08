@@ -1,7 +1,6 @@
-package no.matkje.fileHandling;
+package no.matkje.client.fileHandling;
 
-import no.matkje.logic.Question;
-import no.matkje.logic.Round;
+import no.matkje.client.logic.Round;
 
 import java.io.File;
 import java.io.FileNotFoundException;

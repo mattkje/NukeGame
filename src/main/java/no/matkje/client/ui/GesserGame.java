@@ -1,17 +1,12 @@
-package no.matkje.ui;
+package no.matkje.client.ui;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.media.MediaView;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**

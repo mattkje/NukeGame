@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.ui.MainMenuController">
+<StackPane prefHeight="1080" prefWidth="1920" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.client.ui.MainMenuController">
    <Label prefHeight="730.0" prefWidth="1825.0" text="GE55ER" textAlignment="CENTER" textFill="#ffffff0c">
       <font>
          <Font name="Segoe UI Black Italic" size="500.0" />

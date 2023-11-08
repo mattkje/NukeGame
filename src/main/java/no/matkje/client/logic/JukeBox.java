@@ -1,6 +1,6 @@
-package no.matkje.logic;
+package no.matkje.client.logic;
 
-import no.matkje.fileHandling.DataBase;
+import no.matkje.client.fileHandling.DataBase;
 import java.util.Objects;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
