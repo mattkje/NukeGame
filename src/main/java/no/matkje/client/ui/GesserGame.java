@@ -36,7 +36,7 @@ public class GesserGame extends Application {
     root.setCenter(loading);
 
 
-    Scene scene = new Scene(root, 1920, 1080);
+    Scene scene = new Scene(root, 900, 600);
 
     MainMenu mainMenu = new MainMenu();
 
@@ -53,7 +53,7 @@ public class GesserGame extends Application {
 
 
 
-    stage.setFullScreen(true);
+    //stage.setFullScreen(true);
     stage.setScene(scene);
     stage.setTitle("Gesser");
     stage.getIcons().add(new Image("/no/matkje/media/icon.png"));
