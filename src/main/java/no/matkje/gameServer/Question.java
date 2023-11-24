@@ -1,4 +1,4 @@
-package no.matkje.client.logic;
+package no.matkje.gameServer;
 
 import javafx.scene.image.Image;
 

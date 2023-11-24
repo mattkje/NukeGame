@@ -1,11 +1,10 @@
-package no.matkje.server;
+package no.matkje.gameServer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.concurrent.ScheduledExecutorService;
 import no.matkje.tools.Logger;
 
 /**
@@ -16,8 +15,7 @@ import no.matkje.tools.Logger;
  */
 public class ClientHandler extends Thread {
   private final Socket socket;
-  private final GameServer server;
-  private boolean secure = false;
+  private final GameLogic logic;
   private BufferedReader socketReader;
   private PrintWriter socketWriter;
   private boolean isConnected;
@@ -26,12 +24,12 @@ public class ClientHandler extends Thread {
    * Creates an instance of ClientHandler.
    *
    * @param socket    Socket associated with this client
-   * @param server Reference to the main TCP server class
+   * @param logic Reference to the main TCP server class
    * @throws IOException When something goes wrong with establishing the input or output streams
    */
-  public ClientHandler(Socket socket, GameServer server)
+  public ClientHandler(Socket socket, GameLogic logic)
       throws IOException {
-    this.server = server;
+    this.logic = logic;
     this.socket = socket;
     starter();
   }
@@ -63,7 +61,7 @@ public class ClientHandler extends Thread {
 
     String clientAddress = socket.getRemoteSocketAddress().toString();
     Logger.info("Client at " + clientAddress + " has disconnected.");
-    //simulator.removeDisconnectedClient(this);
+    logic.removeDisconnectedClient(this);
   }
 
   /**
