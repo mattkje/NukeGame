@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import no.matkje.gameClient.GameClientLogic;
 import no.matkje.gameClient.GameClientSocket;
@@ -47,7 +48,13 @@ public class GameClientApplication extends Application {
       Parent root = fxmlLoader.load();
 
       mainScene = new Scene(root);
-      //mainScene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/no/matkje/css/main.css")).toExternalForm());
+
+      Font.loadFont(
+          Objects.requireNonNull(
+              this.getClass().getResourceAsStream("/no/matkje/font/Lato.ttf")),
+          14
+      );
+
 
       stage.setScene(mainScene);
       stage.show();

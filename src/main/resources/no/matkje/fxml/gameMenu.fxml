@@ -10,7 +10,7 @@
       <children>
          <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: transparent;" text="HOME" textFill="WHITE">
             <font>
-               <Font size="14.0" />
+               <Font name="Lato" size="14.0" />
             </font></Button>
       </children></HBox>
     <HBox alignment="BOTTOM_RIGHT" prefHeight="552.0" style="-fx-background-color: rgb(71, 62, 55);">
@@ -20,7 +20,7 @@
                     <children>
                         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="34.0" prefWidth="212.0" text="Waiting for players..." textFill="WHITE">
                             <font>
-                                <Font name="Calibri" size="16.0" />
+                                <Font name="Lato" size="16.0" />
                             </font></Label>
                     </children>
                 </HBox>
