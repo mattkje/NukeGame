@@ -1,8 +1,11 @@
 package no.matkje.gui;
 
+import java.io.IOException;
 import java.util.Objects;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -34,14 +37,23 @@ public class GameClientApplication extends Application {
           "No communication channel. See the README on how to use fake event spawner!");
     }
 
-    stage.setMinWidth(WIDTH);
-    stage.setMinHeight(HEIGHT);
+    //stage.setMinWidth(WIDTH);
+    //stage.setMinHeight(HEIGHT);
     stage.setTitle("Control panel");
-    mainScene = new Scene(createMenu(), WIDTH, HEIGHT);
-    mainScene.getStylesheets().add(
-        Objects.requireNonNull(this.getClass().getResource("/no/matkje/css/main.css")).toExternalForm());
-    stage.setScene(mainScene);
-    stage.show();
+
+    try {
+      // Load FXML file
+      FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/no/matkje/fxml/gameMenu.fxml"));
+      Parent root = fxmlLoader.load();
+
+      mainScene = new Scene(root);
+      //mainScene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("/no/matkje/css/main.css")).toExternalForm());
+
+      stage.setScene(mainScene);
+      stage.show();
+    } catch (IOException e) {
+      e.printStackTrace(); // Handle the exception accordingly
+    }
   }
 
   private static Label createMenu() {
