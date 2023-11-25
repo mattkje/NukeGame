@@ -1,23 +1,24 @@
 package no.matkje.tools;
 
 import java.io.*;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Dictionary {
     private List<String> words;
     private String dictionary;
+    private List<String> usedWords;
 
-    public Dictionary(String dictionary){
+    public Dictionary(String dictionary) throws IOException {
         this.dictionary = dictionary;
-        this.words = new ArrayList<>();
+        this.words = readWordsOfList();
+        this.usedWords = new ArrayList<>();
     }
 
     public List<String> readWordsOfList() throws IOException {
 
-        try (InputStream inputStream = getClass().getResourceAsStream("/no/matkje/dictionaries/" + dictionary + ".txt");
+        try (InputStream inputStream = getClass().getResourceAsStream("/no/matkje/dictionaries/"
+                + dictionary + ".txt");
              InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
              BufferedReader bf = new BufferedReader(inputStreamReader)) {
 
@@ -33,7 +34,12 @@ public class Dictionary {
         return words;
     }
 
-    public boolean isInDictionary(String word) {
-        return words.contains(word);
+    private boolean isInDictionary(String word) {
+        if(usedWords.contains(word)) return false;
+        else return words.contains(word);
+    }
+
+    public void usedWords(String word){
+        if(isInDictionary(word)) usedWords.add(word);
     }
 }
