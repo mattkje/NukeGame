@@ -85,6 +85,9 @@ public class ClientHandler extends Thread {
   private void executeCommand(String processedCommand) {
     char firstChar = processedCommand.charAt(0);
     switch (firstChar) {
+      case 'c':
+        handleConnect();
+        break;
       case 'd':
         handleDenied();
         break;
@@ -94,6 +97,10 @@ public class ClientHandler extends Thread {
       default:
         break;
     }
+  }
+
+  private void handleConnect() {
+    sendResponse("ok");
   }
 
   /**

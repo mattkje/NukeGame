@@ -8,11 +8,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import no.matkje.gameClient.GameClientLogic;
 import no.matkje.gameClient.GameClientSocket;
-import no.matkje.gui.controller.GameClientController;
+import no.matkje.gui.controller.MainMenuController;
 import no.matkje.tools.Logger;
 
 public class GameClientApplication extends Application {
@@ -30,6 +31,7 @@ public class GameClientApplication extends Application {
     GameClientApplication.logic = logic;
     GameClientApplication.socket = socket;
     Logger.info("Starting client...");
+    socket.open();
     launch();
   }
   @Override
@@ -39,16 +41,19 @@ public class GameClientApplication extends Application {
           "No communication channel. See the README on how to use fake event spawner!");
     }
 
-    //stage.setMinWidth(WIDTH);
-    //stage.setMinHeight(HEIGHT);
-    stage.setTitle("Control panel");
+    stage.setTitle("GAYKLM");
+
+    Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/no/matkje/media/icon.png")));
+    stage.getIcons().add(icon);
 
     try {
       // Load FXML file
-      FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/no/matkje/fxml/gameMenu.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/no/matkje/fxml/mainMenu.fxml"));
       Parent root = fxmlLoader.load();
 
       mainScene = new Scene(root);
+      mainScene.getStylesheets().add(
+          Objects.requireNonNull(getClass().getResource("/no/matkje/css/main.css")).toExternalForm());
 
       Font.loadFont(
           Objects.requireNonNull(
@@ -56,8 +61,9 @@ public class GameClientApplication extends Application {
           14
       );
 
-      GameClientController controller = fxmlLoader.getController();
+      MainMenuController controller = fxmlLoader.getController();
       controller.setScene(mainScene);
+      controller.setSocket(socket);
 
       stage.setScene(mainScene);
       stage.show();

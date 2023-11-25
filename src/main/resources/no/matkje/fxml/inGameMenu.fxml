@@ -10,7 +10,7 @@
 <VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.InGameController">
     <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="845.0" style="-fx-background-color: rgb(120, 85, 199);">
       <children>
-         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#goHome" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: transparent;" text="GAYKLM" textFill="WHITE">
+         <Button fx:id="logoButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goHome" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: transparent;" text="GAYKLM" textFill="WHITE">
             <font>
                <Font name="Lato" size="14.0" />
             </font></Button>
