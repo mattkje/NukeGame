@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import no.matkje.tools.*?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.GameClientController">
+<VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.InGameController">
     <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="845.0" style="-fx-background-color: rgb(120, 85, 199);">
       <children>
          <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#goHome" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: transparent;" text="GAYKLM" textFill="WHITE">
@@ -29,18 +30,66 @@
             <bottom>
                 <HBox alignment="CENTER" prefHeight="42.0" style="-fx-background-color: rgb(48, 43, 38);" BorderPane.alignment="CENTER">
                     <children>
-                        <TextField alignment="CENTER" prefHeight="34.0" prefWidth="288.0" style="-fx-background-color: rgb(25, 21, 19); -fx-background-radius: 20;" />
+                        <TextField fx:id="textField" alignment="CENTER" onKeyTyped="#handleKeyTyped" prefHeight="34.0" prefWidth="288.0" promptText="Type..." style="-fx-background-color: rgb(25, 21, 19); -fx-background-radius: 20; -fx-text-fill: white;">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
             </bottom>
             <right>
-                <VBox prefHeight="510.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+                <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="468.0" prefWidth="85.0" style="-fx-hgap: 5; -fx-vgap: 5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="A">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="B">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="C">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="D">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="A">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="B">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="C">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: rgb(221, 187, 102);" text="D">
+                       <font>
+                           <Font name="System Bold" size="20.0" />
+                       </font>
+                   </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></FlowPane>
             </right>
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
                    <CircularPane>
-                       <VBox alignment="CENTER">
+                       <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
                            <Label text="Player" textFill="WHITE">
                                <font>
                                    <Font name="System Bold" size="17.0" />
@@ -51,7 +100,7 @@
                                </image>
                            </ImageView>
                        </VBox>
-                       <VBox alignment="CENTER">
+                       <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
                            <Label text="Player" textFill="WHITE">
                                <font>
                                    <Font name="System Bold" size="17.0" />
@@ -62,7 +111,7 @@
                                </image>
                            </ImageView>
                        </VBox>
-                       <VBox alignment="CENTER">
+                       <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
                            <Label text="Player" textFill="WHITE">
                                <font>
                                    <Font name="System Bold" size="17.0" />
@@ -73,7 +122,7 @@
                                </image>
                            </ImageView>
                        </VBox>
-                       <VBox alignment="CENTER">
+                       <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
                            <Label text="Player" textFill="WHITE">
                                <font>
                                    <Font name="System Bold" size="17.0" />

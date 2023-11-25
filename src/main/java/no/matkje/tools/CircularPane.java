@@ -6,7 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
 public class CircularPane extends Pane {
-  private long degreese = 0;
+  private final long degreese = 0;
   private long increment;
   @Override
   protected void layoutChildren() {

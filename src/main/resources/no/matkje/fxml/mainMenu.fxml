@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.GameClientController">
-   <top>
-      <Label text="BombParty" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Comic Sans MS" size="46.0" />
-         </font>
-      </Label>
-   </top>
+<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 20; -fx-background-color: rgb(71, 62, 55);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.MainMenuController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 30;">
                <children>
                   <TextField />
-                  <Button mnemonicParsing="false" prefWidth="43.0" text="Join" />
+                  <Button mnemonicParsing="false" onAction="#joinGame" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: rgb(61, 189, 49);" text="Join" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font></Button>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="219.0" text="Host" />
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="233.0" style="-fx-background-color: rgb(61, 189, 49);" text="Host" textFill="WHITE" />
          </children>
       </VBox>
    </center>
+   <top>
+      <ImageView fitHeight="222.0" fitWidth="367.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../media/bombparty.png" />
+         </image>
+      </ImageView>
+   </top>
 </BorderPane>
