@@ -1,13 +1,9 @@
-# Ge55er: A Guessing Game
+# NukeGame: A Guessing Game
 
 ## Introduction
 
-Ge55er is a non-serious attempt at creating an interactive guessing game.
+NukeGame is a non-serious attempt at recreating an BombParty from jklm.com.
 
-## Screenshots
-
-![Screenshot 1](https://github.com/mattkje/Ge55er/blob/main/src/main/resources/no/matkje/media/ss1.png)
-![Screenshot 2](https://github.com/mattkje/Ge55er/blob/main/src/main/resources/no/matkje/media/ss2.png)
 
 ## Author
 

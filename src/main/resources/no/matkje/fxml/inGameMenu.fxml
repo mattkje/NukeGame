@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import no.matkje.tools.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.GameClientController">
+    <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="845.0" style="-fx-background-color: rgb(120, 85, 199);">
+      <children>
+         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#goHome" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: transparent;" text="GAYKLM" textFill="WHITE">
+            <font>
+               <Font name="Lato" size="14.0" />
+            </font></Button>
+      </children></HBox>
+    <HBox alignment="BOTTOM_RIGHT" prefHeight="552.0" style="-fx-background-color: rgb(71, 62, 55);">
+        <BorderPane HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+            <top>
+                <HBox alignment="CENTER" prefHeight="42.0" style="-fx-background-color: rgb(48, 43, 38);" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="34.0" prefWidth="212.0" text="name is up" textFill="WHITE">
+                            <font>
+                                <Font name="Lato" size="16.0" />
+                            </font></Label>
+                    </children>
+                </HBox>
+            </top>
+            <bottom>
+                <HBox alignment="CENTER" prefHeight="42.0" style="-fx-background-color: rgb(48, 43, 38);" BorderPane.alignment="CENTER">
+                    <children>
+                        <TextField alignment="CENTER" prefHeight="34.0" prefWidth="288.0" style="-fx-background-color: rgb(25, 21, 19); -fx-background-radius: 20;" />
+                    </children>
+                </HBox>
+            </bottom>
+            <right>
+                <VBox prefHeight="510.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+            </right>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                   <CircularPane>
+                       <VBox alignment="CENTER">
+                           <Label text="Player" textFill="WHITE">
+                               <font>
+                                   <Font name="System Bold" size="17.0" />
+                               </font></Label>
+                           <ImageView fitHeight="60" fitWidth="60" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../media/noSelect.png" />
+                               </image>
+                           </ImageView>
+                       </VBox>
+                       <VBox alignment="CENTER">
+                           <Label text="Player" textFill="WHITE">
+                               <font>
+                                   <Font name="System Bold" size="17.0" />
+                               </font></Label>
+                           <ImageView fitHeight="60" fitWidth="60" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../media/noSelect.png" />
+                               </image>
+                           </ImageView>
+                       </VBox>
+                       <VBox alignment="CENTER">
+                           <Label text="Player" textFill="WHITE">
+                               <font>
+                                   <Font name="System Bold" size="17.0" />
+                               </font></Label>
+                           <ImageView fitHeight="60" fitWidth="60" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../media/noSelect.png" />
+                               </image>
+                           </ImageView>
+                       </VBox>
+                       <VBox alignment="CENTER">
+                           <Label text="Player" textFill="WHITE">
+                               <font>
+                                   <Font name="System Bold" size="17.0" />
+                               </font></Label>
+                           <ImageView fitHeight="60" fitWidth="60" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../media/noSelect.png" />
+                               </image>
+                           </ImageView>
+                       </VBox>
+                   </CircularPane>
+                  <ImageView fitHeight="224.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 270;">
+                     <image>
+                        <Image url="@../media/arrow.png" />
+                     </image>
+                  </ImageView>
+                      <ImageView fitHeight="87.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../media/bomb.png" />
+                          </image>
+                      </ImageView>
+                  <Label text="GAY" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </center>
+        </BorderPane>
+        <VBox alignment="BOTTOM_CENTER" style="-fx-background-color: rgb(32, 32, 32);">
+            <children>
+                <TextField prefHeight="36.0" prefWidth="162.0" style="-fx-background-color: rgb(19, 19, 19); -fx-background-radius: 0;" />
+            </children></VBox>
+    </HBox>
+</VBox>
