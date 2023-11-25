@@ -6,10 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
 
-public class GameClientController {
+public class InGameController {
 
   @FXML
   private Scene scene;
@@ -20,16 +18,6 @@ public class GameClientController {
     this.scene = scene;
   }
 
-  public void joinGame() throws IOException {
-    fxmlLoader = new FXMLLoader(getClass().getResource("/no/matkje/fxml/inGameMenu.fxml"));
-    root = fxmlLoader.load();
-
-    InGameController controller = fxmlLoader.getController();
-    controller.setScene(scene);
-
-    scene.setRoot(root);
-  }
-
   public void goHome() throws IOException {
     fxmlLoader = new FXMLLoader(getClass().getResource("/no/matkje/fxml/mainMenu.fxml"));
     root = fxmlLoader.load();
@@ -38,6 +26,18 @@ public class GameClientController {
     controller.setScene(scene);
 
     scene.setRoot(root);
+  }
+
+  @FXML
+  private TextField textField;
+
+  @FXML
+  public void handleKeyTyped() {
+    textField.textProperty().addListener((observable, oldValue, newValue) -> {
+      if (newValue != null) {
+        textField.setText(newValue.toUpperCase());
+      }
+    });
   }
 
 }
