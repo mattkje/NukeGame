@@ -50,6 +50,7 @@ public class MainMenuController {
 
     GameClientController controller = fxmlLoader.getController();
     controller.setScene(scene);
+    controller.setSocket(socket);
 
     scene.setRoot(root);
   }

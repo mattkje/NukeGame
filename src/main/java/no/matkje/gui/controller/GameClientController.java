@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import no.matkje.gameClient.GameClientSocket;
 
 public class GameClientController {
 
@@ -15,9 +16,13 @@ public class GameClientController {
   private Scene scene;
   private FXMLLoader fxmlLoader;
   private Parent root;
+  private GameClientSocket socket;
 
   public void setScene(Scene scene) {
     this.scene = scene;
+  }
+  public void setSocket(GameClientSocket socket) {
+    this.socket = socket;
   }
 
   public void joinGame() throws IOException {
@@ -26,6 +31,7 @@ public class GameClientController {
 
     InGameController controller = fxmlLoader.getController();
     controller.setScene(scene);
+    controller.setSocket(socket);
 
     scene.setRoot(root);
   }
@@ -36,6 +42,7 @@ public class GameClientController {
 
     MainMenuController controller = fxmlLoader.getController();
     controller.setScene(scene);
+    controller.setSocket(socket);
 
     scene.setRoot(root);
   }
