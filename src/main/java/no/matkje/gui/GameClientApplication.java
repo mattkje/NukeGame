@@ -12,6 +12,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import no.matkje.gameClient.GameClientLogic;
 import no.matkje.gameClient.GameClientSocket;
+import no.matkje.gui.controller.GameClientController;
 import no.matkje.tools.Logger;
 
 public class GameClientApplication extends Application {
@@ -55,6 +56,8 @@ public class GameClientApplication extends Application {
           14
       );
 
+      GameClientController controller = fxmlLoader.getController();
+      controller.setScene(mainScene);
 
       stage.setScene(mainScene);
       stage.show();
