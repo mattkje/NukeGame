@@ -123,6 +123,28 @@
                            </ImageView>
                        </VBox>
                        <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
+                       <Label text="Player" textFill="WHITE">
+                           <font>
+                               <Font name="System Bold" size="17.0" />
+                           </font></Label>
+                       <ImageView fitHeight="60" fitWidth="60" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../media/noSelect.png" />
+                           </image>
+                       </ImageView>
+                   </VBox>
+                       <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
+                           <Label text="Player" textFill="WHITE">
+                               <font>
+                                   <Font name="System Bold" size="17.0" />
+                               </font></Label>
+                           <ImageView fitHeight="60" fitWidth="60" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../media/noSelect.png" />
+                               </image>
+                           </ImageView>
+                       </VBox>
+                       <VBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0">
                            <Label text="Player" textFill="WHITE">
                                <font>
                                    <Font name="System Bold" size="17.0" />
@@ -134,7 +156,7 @@
                            </ImageView>
                        </VBox>
                    </CircularPane>
-                  <ImageView fitHeight="224.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 270;">
+                  <ImageView fitHeight="224.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" rotate="147.2">
                      <image>
                         <Image url="@../media/arrow.png" />
                      </image>

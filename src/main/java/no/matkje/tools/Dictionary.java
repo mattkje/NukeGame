@@ -3,11 +3,13 @@ package no.matkje.tools;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Dictionary {
     private List<String> words;
     private String dictionary;
     private List<String> usedWords;
+    private List<String> prompts;
 
     public Dictionary(String dictionary) throws IOException {
         this.dictionary = dictionary;
@@ -42,4 +44,25 @@ public class Dictionary {
     public void usedWords(String word){
         if(isInDictionary(word)) usedWords.add(word);
     }
+
+    public void createPrompts(int wpp) {
+        Random random = new Random();
+
+        for (char c1 = 'a'; c1 <= 'z'; c1++) {
+            for (char c2 = 'a'; c2 <= 'z'; c2++) {
+                for (char c3 = 'a'; c3 <= 'z'; c3++) {
+
+                    char thirdChar = random.nextBoolean() ? '\0' : c3;
+                    String prompt = "" + c1 + c2 + thirdChar;
+                    prompts.add(prompt);
+                }
+            }
+        }
+
+        for (String prompt : prompts) {
+            prompt.contains("hey");
+        }
+    }
+
+
 }
