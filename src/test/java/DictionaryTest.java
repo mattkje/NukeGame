@@ -1,4 +1,4 @@
-import no.matkje.gameServer.Dictionary;
+import no.matkje.tools.Dictionary;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

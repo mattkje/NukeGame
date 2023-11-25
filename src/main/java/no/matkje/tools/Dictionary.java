@@ -1,4 +1,4 @@
-package no.matkje.gameServer;
+package no.matkje.tools;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -23,7 +23,6 @@ public class Dictionary {
 
             String line;
             while ((line = bf.readLine()) != null && !line.isEmpty()) {
-                System.out.println(line);
                 words.add(line);
             }
             return words;
@@ -32,5 +31,9 @@ public class Dictionary {
 
     public List<String> getWords(){
         return words;
+    }
+
+    public boolean isInDictionary(String word) {
+        return words.contains(word);
     }
 }
