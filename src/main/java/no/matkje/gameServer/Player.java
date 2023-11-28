@@ -11,20 +11,20 @@ import javafx.scene.image.Image;
 public class Player {
   private String name;
   private Image image;
-  private int score;
-  private int rank;
+  private int health;
+  private final int id;
 
   /**
    * Creates an instance of Player.
    *
    * @param name   The player name.
-   * @param score  The player score.
+   * @param health  The player score.
    */
-  private Player(String name, Image image, int score, int rank) {
+  public Player(String name, Image image, int health, int id) {
     this.name = name;
     this.image = image;
-    this.score = score;
-    this.rank = rank;
+    this.health = health;
+    this.id = id;
   }
 
   /**
@@ -48,8 +48,8 @@ public class Player {
     this.image = image;
   }
 
-  public void setScore(int score) {
-    this.score = score;
+  public void setHealth(int health) {
+    this.health = health;
   }
 
 
@@ -59,12 +59,12 @@ public class Player {
    *
    * @param amount The amount to add to the player's score.
    */
-  public void addScore(int amount) {
-    score += amount;
+  public void addHealth(int amount) {
+    health += amount;
   }
 
-  public boolean checkScore() {
-    return score >= 0;
+  public boolean checkHealth() {
+    return health >= 0;
   }
 
   /**
@@ -72,8 +72,13 @@ public class Player {
    *
    * @return The player's score value.
    */
-  public int getScore() {
-    return score;
+  public int getHealth() {
+    return health;
+  }
+
+
+  public int getId() {
+    return id;
   }
 
   /**
@@ -83,8 +88,8 @@ public class Player {
   public static class PlayerBuilder {
     private String name;
     private Image image;
-    private int score;
-    private int rank;
+    private int health;
+    private int id;
 
     /**
      * Creates a new instance of the PlayerBuilder class.
@@ -92,8 +97,8 @@ public class Player {
     public PlayerBuilder() {
       this.name = "";
       this.image = null;
-      this.score = 0;
-      this.rank = 0;
+      this.health = 0;
+      this.id = 0;
     }
 
     /**
@@ -121,26 +126,18 @@ public class Player {
     /**
      * Sets the score of the player.
      *
-     * @param score Player score.
+     * @param health Player score.
      * @return The player score.
      */
-    public PlayerBuilder score(int score) {
-      if (score > 0) {
-        this.score = score;
+    public PlayerBuilder health(int health) {
+      if (health > 0) {
+        this.health = health;
       }
       return this;
     }
 
-    /**
-     * Sets the rank of the player.
-     *
-     * @param rank Player rank.
-     * @return The player rank.
-     */
-    public PlayerBuilder rank(int rank) {
-      if (rank > 0) {
-        this.rank = rank;
-      }
+    public PlayerBuilder id(int id) {
+      this.id = id;
       return this;
     }
 
@@ -150,7 +147,7 @@ public class Player {
      * @return The player.
      */
     public Player build() {
-      return new Player(name, image, score, rank);
+      return new Player(name, image, health, id);
     }
 
   }

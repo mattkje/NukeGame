@@ -11,7 +11,7 @@ public class CircularPane extends Pane {
   @Override
   protected void layoutChildren() {
     final int radius = 150;
-    final double increment = 360 / getChildren().size();
+    final double increment = (double) 360 / getChildren().size();
     double degreese = 0;
     for (Node node : getChildren()) {
       double x = radius * Math.cos(Math.toRadians(degreese)) + getWidth() / 2;
