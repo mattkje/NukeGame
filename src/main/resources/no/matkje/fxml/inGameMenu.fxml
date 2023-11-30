@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import no.matkje.tools.*?>
+<?import no.matkje.gui.guiTools.*?>
 
 <VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.matkje.gui.controller.InGameController">
     <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="845.0" style="-fx-background-color: rgb(120, 85, 199);">
@@ -81,7 +81,7 @@
                            <Font name="System Bold" size="20.0" />
                        </font>
                    </Label>
-                  <Button mnemonicParsing="false" onAction="#updateDummy" text="dead" />
+                  <Button mnemonicParsing="false" onAction="#dummyPlayerUpdates" text="dead" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -91,7 +91,7 @@
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
                    <CircularPane fx:id="circularPane" />
-                  <ImageView fitHeight="224.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" rotate="147.2">
+                  <ImageView fx:id="arrow" fitHeight="224.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" rotate="147.2" visible="false">
                      <image>
                         <Image url="@../media/arrow.png" />
                      </image>
@@ -101,7 +101,7 @@
                               <Image url="@../media/bomb.png" />
                           </image>
                       </ImageView>
-                  <Label text="GAY" textFill="WHITE">
+                  <Label fx:id="prompt" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="21.0" />
                      </font>

@@ -1,4 +1,4 @@
-package no.matkje.tools;
+package no.matkje.gui.guiTools;
 
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
