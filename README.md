@@ -1,8 +1,8 @@
-# NukeGame: A Guessing Game
+ # NukeGame: A Guessing Game
 
 ## Introduction
 
-NukeGame is a non-serious attempt at recreating an BombParty from jklm.com.
+NukeGame is a non-serious attempt at recreating BombParty from jklm.com.
 
 
 ## Author
