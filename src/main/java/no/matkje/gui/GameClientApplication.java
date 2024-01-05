@@ -21,22 +21,27 @@ public class GameClientApplication extends Application {
   private static final int WIDTH = 1000;
   private static final int HEIGHT = 600;
   private static GameClientLogic logic;
-  private static GameClientSocket socket;
+  private static GameClientSocket client;
   private Scene mainScene;
 
-  public static void startApp(GameClientLogic logic, GameClientSocket socket) {
+  public static void startApp(GameClientLogic logic, GameClientSocket client) {
     if (logic == null) {
       throw new IllegalArgumentException("Logic can't be null");
     }
     GameClientApplication.logic = logic;
-    GameClientApplication.socket = socket;
+    GameClientApplication.client = client;
     Logger.info("Starting client...");
-    socket.open();
+    if (client.start()) {
+      System.out.println("Server found: " + client.getServerHost());
+    } else {
+      System.out.println("No server was found. Starting in disconnected mode");
+    }
     launch();
+    client.stop();
   }
   @Override
   public void start(Stage stage) {
-    if (socket == null) {
+    if (client == null) {
       throw new IllegalStateException(
           "No communication channel. See the README on how to use fake event spawner!");
     }
@@ -63,7 +68,7 @@ public class GameClientApplication extends Application {
 
       MainMenuController controller = fxmlLoader.getController();
       controller.setScene(mainScene);
-      controller.setSocket(socket);
+      controller.setSocket(client);
 
       stage.setScene(mainScene);
       stage.show();

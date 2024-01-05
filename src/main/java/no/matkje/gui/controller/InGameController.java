@@ -3,6 +3,7 @@ package no.matkje.gui.controller;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -91,10 +92,10 @@ public class InGameController {
         int playerIndex = 1;
         for (Map.Entry<Integer, PlayerBox> entry : playerBoxMap.entrySet()) {
           if (entry.getKey() == playerId) {
-            double targetAngle = 360.0 * playerIndex / numOfPositions - 35;
+            double targetAngle = 360.0 * playerIndex / numOfPositions - 45;
 
             Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(1),
+                new KeyFrame(Duration.seconds(0.6),
                     new KeyValue(arrow.rotateProperty(), targetAngle)
                 )
             );
@@ -119,24 +120,50 @@ public class InGameController {
     Player player1 = new Player("Player 1", new Image("/no/matkje/media/noSelect.png"), 2,1);
     Player player2 = new Player("Player 2", new Image("/no/matkje/media/noSelect.png"), 3,2);
     Player player3 = new Player("Player 3", new Image("/no/matkje/media/noSelect.png"), 1,3);
+    Player player4 = new Player("Player 4", new Image("/no/matkje/media/noSelect.png"), 3,4);
+    Player player5 = new Player("Player 5", new Image("/no/matkje/media/noSelect.png"), 1,5);
     spawnPlayer(player1);
     spawnPlayer(player2);
     spawnPlayer(player3);
+    spawnPlayer(player4);
+    spawnPlayer(player5);
 
   }
 
   public void dummyPlayerUpdates() {
-    updatePlayerState(1,0);
-    updatePlayerState(2, 2);
-    updatePlayerState(3, 5);
-
+    //updatePlayerState(1,0);
+    //updatePlayerState(2, 2);
+    //updatePlayerState(3, 5);
+    setPrompt(randomPrompt());
     dummyArrowMovement();
   }
 
+  private int currentValue = 1;
+
   public void dummyArrowMovement() {
-    pointArrow(1);
-    pointArrow(2);
-    pointArrow(3);
+    // Check if currentValue reaches playerBoxSize and reset to 1 if it does
+    if (currentValue >= playerBoxMap.size()) {
+      currentValue = 1;
+    } else {
+      currentValue++; // Increment the value
+    }
+
+    pointArrow(currentValue);
+  }
+
+  public String randomPrompt() {
+    Random random = new Random();
+
+    for (char c1 = 'a'; c1 <= 'z'; c1++) {
+      for (char c2 = 'a'; c2 <= 'z'; c2++) {
+        for (char c3 = 'a'; c3 <= 'z'; c3++) {
+
+          char thirdChar = random.nextBoolean() ? '\0' : c3;
+          return "" + c1 + c2 + thirdChar;
+        }
+      }
+    }
+    return null;
   }
 
 }

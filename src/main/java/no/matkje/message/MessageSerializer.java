@@ -2,6 +2,7 @@ package no.matkje.message;
 
 import no.matkje.command.ConnectCommand;
 import no.matkje.command.DisconnectCommand;
+import no.matkje.command.IgnoreCommand;
 import no.matkje.command.WordCommand;
 
 public class MessageSerializer {

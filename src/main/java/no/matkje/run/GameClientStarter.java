@@ -29,7 +29,7 @@ public class GameClientStarter {
   }
 
   private void stopCommunication() {
-    gameClientSocket.close();
+    gameClientSocket.stop();
   }
 
 }

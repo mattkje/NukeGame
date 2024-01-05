@@ -29,45 +29,39 @@ public class GameClientSocket {
   }
 
   /**
-   * Opens a TCP socket connection to the specified server.
+   * Attempts to establish a connection to the remote server. If successful,
+   * initializes the necessary communication streams and sets up the connection.
    *
-   * @return true if the socket connection was successfully established, false otherwise.
+   * @return True if the connection to the server was successfully established; false otherwise.
    */
-  public boolean open() {
+  public boolean start() {
+    boolean connected = false;
     try {
       socket = new Socket(SERVER_HOST, PORT_NUMBER);
-      Logger.info("Successfully connected to: " + SERVER_HOST + ":" + PORT_NUMBER);
-
-      Logger.request("Testing connection");
       socketWriter = new PrintWriter(socket.getOutputStream(), true);
       socketReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-      Logger.acceptMessage("[SUCCESS]");
-
-
-      isConnected = true;
-      return true;
+      connected = true;
     } catch (IOException e) {
-      Logger.error("Could not connect to server: " + e.getMessage());
-      return false;
+      System.err.println("Could not connect to the server: " + e.getMessage());
     }
+    return connected;
   }
 
   /**
-   * This method should close the connection to the server.
+   * Closes the socket and nullifies associated resources,
+   * including the socket itself, socketReader, and socketWriter.
    */
-  public void close() {
-    try {
-      if (isConnected) {
+  public void stop() {
+    if (socket != null) {
+      try {
         socket.close();
-        socketWriter.close();
-        socketReader.close();
-        Logger.info(
-            "Connection with server: " + SERVER_HOST + ":" + PORT_NUMBER + " has been closed");
-        System.exit(0);
+      } catch (IOException e) {
+        System.err.println("Error while closing the socket: " + e.getMessage());
+      } finally {
+        socket = null;
+        socketReader = null;
+        socketWriter = null;
       }
-    } catch (IOException e) {
-      Logger.error("Could not close connection: " + e.getMessage());
     }
   }
 
@@ -96,4 +90,12 @@ public class GameClientSocket {
     }
   }
 
+  /**
+   * This method should return the current server host.
+   *
+   * @return the current server host.
+   */
+  public String getServerHost() {
+    return SERVER_HOST + ":" + PORT_NUMBER;
+  }
 }
