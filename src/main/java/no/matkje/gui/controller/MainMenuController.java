@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import no.matkje.command.ConnectCommand;
 import no.matkje.gameClient.GameClientSocket;
 
 public class MainMenuController implements Initializable{
@@ -35,18 +36,18 @@ public class MainMenuController implements Initializable{
   }
 
   public void joinGame() throws IOException {
-    String code = textField.getText();
 
+    startGame();
+    /*
+    String code = textField.getText();
     if (!code.isEmpty()) {
-      if (socket.sendCommand("c").equals("ok")) {
-        startGame();
-      } else {
-        textField.setText("failed");
-      }
+
 
     } else {
       textField.setText("CODE!");
     }
+     */
+
 
 
   }

@@ -5,7 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import no.matkje.command.Command;
+import no.matkje.message.CurrentPromptMessage;
+import no.matkje.message.Message;
 import no.matkje.tools.Logger;
+import no.matkje.message.MessageSerializer;
 
 /**
  * This class represents a client handler.
@@ -15,7 +19,8 @@ import no.matkje.tools.Logger;
  */
 public class ClientHandler extends Thread {
   private final Socket socket;
-  private final GameLogic logic;
+  private final GameServer server;
+
   private BufferedReader socketReader;
   private PrintWriter socketWriter;
   private boolean isConnected;
@@ -23,26 +28,15 @@ public class ClientHandler extends Thread {
   /**
    * Creates an instance of ClientHandler.
    *
-   * @param socket    Socket associated with this client
-   * @param logic Reference to the main TCP server class
+   * @param socket Socket associated with this client
+   * @param server Reference to the main TCP server class
    * @throws IOException When something goes wrong with establishing the input or output streams
    */
-  public ClientHandler(Socket socket, GameLogic logic)
-      throws IOException {
-    this.logic = logic;
+  public ClientHandler(Socket socket, GameServer server) throws IOException {
+    this.server = server;
     this.socket = socket;
-    starter();
-  }
-
-  /**
-   * This method starts the connection without encryption.
-   *
-   * @throws IOException Exception thrown if connection fails.
-   */
-  private void starter() throws IOException {
     socketReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     socketWriter = new PrintWriter(socket.getOutputStream(), true);
-    isConnected = true;
   }
 
   /**
@@ -50,83 +44,78 @@ public class ClientHandler extends Thread {
    */
   @Override
   public void run() {
-    String rawCommand;
-    try {
-      while (isConnected && (rawCommand = socketReader.readLine()) != null) {
-        processCommand(rawCommand);
+    Message response;
+    while ((response = executeClientCommand()) != null) {
+      if (isBroadcastMessage(response)) {
+        server.broadcastMessageToAllClients(response);
       }
-    } catch (IOException e) {
-      Logger.error("An error occurred while reading from the socket: " + e.getMessage());
     }
 
     String clientAddress = socket.getRemoteSocketAddress().toString();
-    Logger.info("Client at " + clientAddress + " has disconnected.");
-    logic.removeDisconnectedClient(this);
+    System.out.println("Client at " + clientAddress + " has disconnected.");
+    server.removeDisconnectedClient(this);
   }
 
   /**
-   * Processes a raw command received from the client, providing feedback accordingly.
+   * Reads a client request and executes the corresponding command.
    *
-   * @param rawCommand The command as a string
+   * @return The response message from the executed command or null if the command is null.
    */
-  private void processCommand(String rawCommand) {
-
-    if (rawCommand != null && !rawCommand.isEmpty()) {
-      executeCommand(rawCommand);
-      Logger.info("Received a command from the client: " + rawCommand);
+  private Message executeClientCommand() {
+    Command clientCommand = getClientCommand();
+    if (clientCommand == null) {
+      return null;
     }
+
+    String commandName = clientCommand.getClass().getSimpleName();
+    System.out.println("Received a " + commandName + " from the client.");
+    return sendResponse(clientCommand.execute(server.getLogic()));
   }
 
   /**
-   * Process and execute actions based on the content of the provided command.
+   * Checks if the given message is a broadcast message.
    *
-   * @param processedCommand The command as a string
+   * @param response The response to check.
+   * @return True if the response is a broadcast message, false otherwise.
    */
-  private void executeCommand(String processedCommand) {
-    char firstChar = processedCommand.charAt(0);
-    switch (firstChar) {
-      case 'c':
-        handleConnect();
-        break;
-      case 'd':
-        handleDenied();
-        break;
-      case '0':
-        handleDisconnect();
-        break;
-      default:
-        break;
+  private boolean isBroadcastMessage(Message response) {
+    return response instanceof CurrentPromptMessage;
+  }
+
+  /**
+   * Read one message from the TCP socket - from the client.
+   *
+   * @return The received client message, or null on error
+   */
+  private Command getClientCommand() {
+    Message clientCommand = null;
+    try {
+      String rawClientRequest = socketReader.readLine();
+      clientCommand = MessageSerializer.fromString(rawClientRequest);
+      if (!(clientCommand instanceof Command)) {
+        if (clientCommand != null) {
+          System.err.println("Received an unexpected message from the client: " + clientCommand);
+        }
+        clientCommand = null;
+      }
+    } catch (IOException e) {
+      System.err.println("Failed to receive the client request: " + e.getMessage());
+    } catch (NullPointerException e1) {
+      System.out.println("The client has lost the connection");
     }
-  }
 
-  private void handleConnect() {
-    sendResponse("ok");
+    assert clientCommand instanceof Command : "Expected a Command but received: " + clientCommand;
+    return (Command) clientCommand;
   }
 
   /**
-   * This method should handle a denial message.
-   */
-  private void handleDenied() {
-    socketWriter.println("d");
-  }
-
-
-  /**
-   * Handles disconnecting.
-   */
-  private void handleDisconnect() {
-    isConnected = false;
-  }
-
-
-  /**
-   * This method should send responses back to the client.
+   * Send a response from the server to the client, over the TCP socket.
    *
-   * @param response Command
+   * @param message The message to send to the client
    */
-  public void sendResponse(String response) {
-    socketWriter.println(response);
-    socketWriter.flush();
+  public Message sendResponse(Message message) {
+    socketWriter.println(message);
+    return message;
   }
 
 }

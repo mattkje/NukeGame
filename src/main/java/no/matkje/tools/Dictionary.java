@@ -11,13 +11,13 @@ public class Dictionary {
     private List<String> usedWords;
     private List<String> prompts;
 
-    public Dictionary(String dictionary) throws IOException {
+    public Dictionary(String dictionary) {
         this.dictionary = dictionary;
         this.words = readWordsOfList();
         this.usedWords = new ArrayList<>();
     }
 
-    public List<String> readWordsOfList() throws IOException {
+    public List<String> readWordsOfList() {
 
         try (InputStream inputStream = getClass().getResourceAsStream("/no/matkje/dictionaries/"
                 + dictionary + ".txt");
@@ -29,6 +29,8 @@ public class Dictionary {
                 words.add(line);
             }
             return words;
+        } catch (IOException e) {
+          throw new RuntimeException(e);
         }
     }
 

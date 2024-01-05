@@ -1,6 +1,7 @@
 package no.matkje.run;
 
 import no.matkje.gameServer.GameLogic;
+import no.matkje.gameServer.GameServer;
 import no.matkje.tools.Logger;
 
 public class CommandLineStarter {
@@ -12,9 +13,10 @@ public class CommandLineStarter {
    *             use real socket communication.
    */
   public static void main(String[] args) {
-    Logger.info("Running greenhouse simulator in command line (without GUI)...");
+    Logger.info("Running game server...");
     GameLogic logic = new GameLogic();
-    logic.initialize();
-    logic.start();
+    GameServer server = new GameServer(logic);
+    server.initialize();
+    server.start();
   }
 }

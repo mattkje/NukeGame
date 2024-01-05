@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import no.matkje.command.Command;
+import no.matkje.message.MessageSerializer;
 import no.matkje.tools.Logger;
 
 public class GameClientSocket {
@@ -76,16 +78,22 @@ public class GameClientSocket {
    * @param command Current sent command.
    * @return Server response.
    */
-  public String sendCommand(String command) {
-    String response = "";
-    socketWriter.println(command);
-
-    try {
-      response = socketReader.readLine();
-    } catch (IOException e) {
-      Logger.error("Error while receiving the command");
+  public void sendCommand(Command command) {
+    if (socketWriter != null && socketReader != null) {
+      try {
+        socketWriter.println(MessageSerializer.toString(command));
+        System.out.println("Sending command: " + MessageSerializer.toString(command));
+        String serverResponse;
+        try {
+          serverResponse = socketReader.readLine();
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+        System.out.println("Server response: " + serverResponse);
+      } catch (Exception e) {
+        System.err.println("Could not send a command: " + e.getMessage());
+      }
     }
-    return response;
   }
 
 }
