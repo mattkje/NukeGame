@@ -1,10 +1,14 @@
- # NukeGame: A Guessing Game
+> ⚠️ **DEPRECATION NOTICE:**
+> This project is no longer maintained and is provided as-is.
+> It was never completed.
 
-## Introduction
+# NukeGame: A Guessing Game
 
-NukeGame is a non-serious attempt at recreating BombParty from jklm.com.
+## Overview
 
+**NukeGame** is an unfinished and non-serious attempt at recreating the game *BombParty* from [jklm.fun](https://jklm.fun).
 
-## Author
+## Authors
 
-Matti Kjellstadli
+* Matti Kjellstadli
+* Adrian Johansen
